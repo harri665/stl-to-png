@@ -55,6 +55,7 @@ export function stl2png(stlData: Buffer, options: Options = {}): Buffer {
   camera.position.x = options.cameraPosition?.[0] ?? DEFAULTS.cameraPosition[0];
   camera.position.y = options.cameraPosition?.[1] ?? DEFAULTS.cameraPosition[1];
   camera.position.z = options.cameraPosition?.[2] ?? DEFAULTS.cameraPosition[2];
+  camera.up.set(0,0,1);
   camera.lookAt(geometry.boundingSphere.center);
 
   // (re)Position the camera
